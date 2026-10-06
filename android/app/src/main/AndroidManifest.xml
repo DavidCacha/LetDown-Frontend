@@ -1,7 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Desde Android 11 (API 30), una app necesita declarar explícitamente
+         qué otras apps puede "ver" en el sistema (package visibility). Sin
+         esto, la librería de Spotify no logra detectar que la app de
+         Spotify está instalada y cae al navegador aunque sí la tengas. -->
+    <queries>
+        <package android:name="com.spotify.music" />
+    </queries>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -19,6 +29,22 @@
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+      </activity>
+
+      <!-- Requerida por la librería com.spotify.android:auth (v5+) para recibir
+           la respuesta del login de Spotify, sea que haya abierto la app de
+           Spotify instalada o el navegador integrado. Usa el mismo esquema
+           letdownapp://spotify-callback que ya tenías registrado en el
+           Dashboard de Spotify, así que no hace falta registrar uno nuevo. -->
+      <activity
+        android:name="com.spotify.sdk.android.auth.browser.RedirectUriReceiverActivity"
+        android:exported="true">
+        <intent-filter android:autoVerify="false">
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="letdownapp" android:host="spotify-callback" />
         </intent-filter>
       </activity>
     </application>

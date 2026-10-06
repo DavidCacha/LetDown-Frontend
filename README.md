@@ -1,79 +1,75 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# LetDown — Sanctuary (React Native CLI + TypeScript)
 
-# Getting Started
+Proyecto generado a partir del archivo de Figma **LetDown**
+(`TZGiQmzzljMDZvdeuJGvgu`), respetando textos, colores, tipografía y
+estructura tal como están definidos en el diseño.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Stack
+- React Native CLI + TypeScript
+- Estilos con `StyleSheet` nativo (sin librerías de CSS)
+- Iconos: `react-native-vector-icons` (Feather) — placeholders 1:1 por
+  significado mientras conectas los SVG reales exportados de Figma
+- Navegación: **no incluida a propósito** (la vas a montar tú). Las
+  screens reciben `navigation`/`route` como props y usan
+  `navigation.navigate('Nombre')`, `navigation.goBack()`,
+  `navigation.openDrawer()` — cualquier navegador (Stack/Drawer de
+  React Navigation) encaja sin tocar el código de las screens.
 
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+## Estructura
+```
+src/
+  assets/            # imágenes e íconos (logo placeholder incluido)
+  components/        # UI reutilizable (Button, TextField, Chip, TopBar,
+                      # AppHeader, BottomNav, SideMenu, CrisisPanel, ChatBubble...)
+  constants/theme.ts # colores, tipografía, espaciados y sombras extraídos del Figma
+  screens/
+    Auth/            # Register, Login, OtpVerification
+    Dashboard/        # Home / Dashboard
+    Chat/            # Chat con IA, Historial de chats
+    ...
 ```
 
-## Step 2: Start your Application
+## Progreso (17/17 pantallas del Figma completas)
+Todas construidas con los textos, colores y estructura reales del archivo de Figma:
+1. Registro — `screens/Auth/RegisterScreen.tsx`
+2. Inicio de Sesión — `screens/Auth/LoginScreen.tsx`
+3. Validación de Cuenta (OTP) — `screens/Auth/OtpVerificationScreen.tsx`
+4. Menú Hamburguesa → componente `SideMenu` (drawer) + `AppHeader` + `BottomNav`,
+   reutilizable en todas las screens (no es una screen aparte, se monta en el navigator)
+5. Inicio / Dashboard — `screens/Dashboard/DashboardScreen.tsx`
+6. Chat con IA — `screens/Chat/ChatScreen.tsx`
+7. Historial de Chats — `screens/Chat/ChatHistoryScreen.tsx`
+8. Nuevo Chat — `screens/Chat/NewChatScreen.tsx`
+9. Perfil y Configuración — `screens/Profile/ProfileScreen.tsx`
+10. Spotify — Vincular cuenta — `screens/Spotify/SpotifyConnectScreen.tsx`
+11. Spotify — Recomendaciones y Playlists — `screens/Spotify/SpotifyPlaylistsScreen.tsx`
+12. Spotify — Favoritos e Historial — `screens/Spotify/SpotifyFavoritesScreen.tsx`
+13. Ubicación Segura — Lugares Seguros — `screens/Location/SafePlacesScreen.tsx`
+14. Ubicación Segura — Buscar Ayuda Cercana — `screens/Location/NearbyHelpScreen.tsx`
+15. Ubicación Segura — Compartir en Crisis — `screens/Location/CrisisShareScreen.tsx`
+16. Agregar o Editar Contacto — `screens/Contacts/EditContactScreen.tsx`
+17. Contactos de Emergencia — `screens/Contacts/EmergencyContactsScreen.tsx`
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+## Pendiente de tu lado (navegación)
+Sugerencia de árbol de navegación (React Navigation, Stack + Drawer):
 ```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+Drawer (contenido: <SideMenu />)
+  Stack "Home" → DashboardScreen
+  Stack "Chat" → ChatScreen, NewChatScreen, ChatHistoryScreen
+  Stack "Profile" → ProfileScreen
+  Stack "Spotify" → SpotifyConnectScreen, SpotifyPlaylistsScreen, SpotifyFavoritesScreen
+  Stack "Location" → SafePlacesScreen, NearbyHelpScreen, CrisisShareScreen
+  Stack "Contacts" → EmergencyContactsScreen, EditContactScreen
+Stack raíz (sin drawer) → RegisterScreen, LoginScreen, OtpVerificationScreen
 ```
+Las screens con `EditContact` esperan `route.params.contactId` opcional (si viene,
+es modo edición y se muestra el botón "Eliminar").
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## Notas importantes
+- **Iconos/imágenes**: Figma expone los assets como URLs temporales
+  (expiran a los 7 días). Sustituye los íconos `Feather` por los SVG
+  reales cuando los exportes desde Figma, y reemplaza
+  `src/assets/images/sanctuary-logo.png` por el logo real.
+- **Navegación**: cada pantalla asume que recibe `navigation` (y
+  `route` cuando aplica) vía props — estándar de React Navigation.
+- **Instalación**: `npm install`, luego `npx pod-install` en iOS.
