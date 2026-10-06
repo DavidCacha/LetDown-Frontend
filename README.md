@@ -1,4 +1,4 @@
-# LetDown — Sanctuary (React Native CLI + TypeScript)
+# LetDown (React Native CLI + TypeScript)
 
 Proyecto generado a partir del archivo de Figma **LetDown**
 (`TZGiQmzzljMDZvdeuJGvgu`), respetando textos, colores, tipografía y
