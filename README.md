@@ -1,75 +1,178 @@
-# LetDown (React Native CLI + TypeScript)
+# LetDown 📱
 
-Proyecto generado a partir del archivo de Figma **LetDown**
-(`TZGiQmzzljMDZvdeuJGvgu`), respetando textos, colores, tipografía y
-estructura tal como están definidos en el diseño.
+LetDown is a mobile application focused on emotional support and user well-being.
 
-## Stack
-- React Native CLI + TypeScript
-- Estilos con `StyleSheet` nativo (sin librerías de CSS)
-- Iconos: `react-native-vector-icons` (Feather) — placeholders 1:1 por
-  significado mientras conectas los SVG reales exportados de Figma
-- Navegación: **no incluida a propósito** (la vas a montar tú). Las
-  screens reciben `navigation`/`route` como props y usan
-  `navigation.navigate('Nombre')`, `navigation.goBack()`,
-  `navigation.openDrawer()` — cualquier navegador (Stack/Drawer de
-  React Navigation) encaja sin tocar el código de las screens.
+The application provides a simple and accessible experience where users can interact through chat, manage their profile, access support resources, and connect their Spotify account.
 
-## Estructura
-```
+> 🚧 This project is currently under development.
+
+---
+
+## 📱 Features
+
+- User registration and login
+- OTP verification
+- Form validation
+- Secure password validation
+- Dashboard
+- Emotional support chat
+- New chat conversations
+- Chat history
+- User profile
+- Spotify integration
+- Spotify playlists
+- Favorite songs
+- Crisis support section
+- Side navigation menu
+- Responsive mobile interface
+
+---
+
+## 🛠️ Technologies
+
+- React Native
+- TypeScript
+- JavaScript
+- React Navigation
+- React Native CLI
+- React Native Vector Icons
+- React Native Reanimated
+- React Native Gesture Handler
+- Android
+- iOS
+- Git
+- GitHub
+
+---
+📸 Screenshots
+Screenshots of the application will be added as development progresses.
+
+Login
+
+<img width="270" height="640" alt="login" src="https://github.com/user-attachments/assets/d128db93-5adb-4a36-a140-32e476ba8db2" />
+
+Restablecer contraseña
+
+<img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 50 PM" src="https://github.com/user-attachments/assets/84c66f47-96e1-4253-adde-39be822b529f" />
+
+Chat con AI
+
+<img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(2)" src="https://github.com/user-attachments/assets/224ba171-5ac7-49ab-9d24-4d417e72df29" />
+<img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(3)" src="https://github.com/user-attachments/assets/7366a136-0cdf-44e7-9ca5-57f3afa0bbf8" />
+
+Historial de chats
+<img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(4)" src="https://github.com/user-attachments/assets/0388a361-62e5-4a95-ba87-d80c79caf57b" />
+
+Perfil y escaneo de datos de INE
+<img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(5)" src="https://github.com/user-attachments/assets/cfa271ad-0f5f-4741-9481-f82d9ce89132" />
+
+Musica emotiva - Integracion con Spotify
+<img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(6)" src="https://github.com/user-attachments/assets/9c6f5b84-b5b9-44b2-9ff2-9fd1a17bbb45" />
+
+Localizacion segura
+<img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(7)" src="https://github.com/user-attachments/assets/baa6dafb-6c52-455a-bd3d-2fa95af1ec27" />
+
+Contacts
+<img  width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(7)" src="https://github.com/user-attachments/assets/f163bdf3-9c65-4751-9e85-a861e23058b4" />
+
+
+Dashboard
+
+<img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 50 PM" src="https://github.com/user-attachments/assets/c644816c-ffee-4c6c-af2b-41799d58ac5c" />
+
+---
+## 📂 Project Structure
+
+```text
 src/
-  assets/            # imágenes e íconos (logo placeholder incluido)
-  components/        # UI reutilizable (Button, TextField, Chip, TopBar,
-                      # AppHeader, BottomNav, SideMenu, CrisisPanel, ChatBubble...)
-  constants/theme.ts # colores, tipografía, espaciados y sombras extraídos del Figma
-  screens/
-    Auth/            # Register, Login, OtpVerification
-    Dashboard/        # Home / Dashboard
-    Chat/            # Chat con IA, Historial de chats
-    ...
-```
+├── components/
+│   ├── AppHeader
+│   ├── Chip
+│   ├── CrisisPanel
+│   ├── PrimaryButton
+│   ├── SideMenu
+│   ├── TextField
+│   └── TopBar
+│
+├── screens/
+│   ├── auth/
+│   │   ├── LoginScreen
+│   │   ├── RegisterScreen
+│   │   └── OtpVerificationScreen
+│   │
+│   ├── chat/
+│   │   ├── ChatScreen
+│   │   ├── NewChatScreen
+│   │   └── ChatHistoryScreen
+│   │
+│   ├── dashboard/
+│   │   └── DashboardScreen
+│   │
+│   ├── profile/
+│   │   └── ProfileScreen
+│   │
+│   └── spotify/
+│       ├── SpotifyConnectScreen
+│       ├── SpotifyPlaylistsScreen
+│       └── SpotifyFavoritesScreen
+│
+└── navigation/
 
-## Progreso (17/17 pantallas del Figma completas)
-Todas construidas con los textos, colores y estructura reales del archivo de Figma:
-1. Registro — `screens/Auth/RegisterScreen.tsx`
-2. Inicio de Sesión — `screens/Auth/LoginScreen.tsx`
-3. Validación de Cuenta (OTP) — `screens/Auth/OtpVerificationScreen.tsx`
-4. Menú Hamburguesa → componente `SideMenu` (drawer) + `AppHeader` + `BottomNav`,
-   reutilizable en todas las screens (no es una screen aparte, se monta en el navigator)
-5. Inicio / Dashboard — `screens/Dashboard/DashboardScreen.tsx`
-6. Chat con IA — `screens/Chat/ChatScreen.tsx`
-7. Historial de Chats — `screens/Chat/ChatHistoryScreen.tsx`
-8. Nuevo Chat — `screens/Chat/NewChatScreen.tsx`
-9. Perfil y Configuración — `screens/Profile/ProfileScreen.tsx`
-10. Spotify — Vincular cuenta — `screens/Spotify/SpotifyConnectScreen.tsx`
-11. Spotify — Recomendaciones y Playlists — `screens/Spotify/SpotifyPlaylistsScreen.tsx`
-12. Spotify — Favoritos e Historial — `screens/Spotify/SpotifyFavoritesScreen.tsx`
-13. Ubicación Segura — Lugares Seguros — `screens/Location/SafePlacesScreen.tsx`
-14. Ubicación Segura — Buscar Ayuda Cercana — `screens/Location/NearbyHelpScreen.tsx`
-15. Ubicación Segura — Compartir en Crisis — `screens/Location/CrisisShareScreen.tsx`
-16. Agregar o Editar Contacto — `screens/Contacts/EditContactScreen.tsx`
-17. Contactos de Emergencia — `screens/Contacts/EmergencyContactsScreen.tsx`
+🚀 Installation
+Clone the repository:
+git clone https://github.com/YOUR_USERNAME/LetDown-Frontend.git
 
-## Pendiente de tu lado (navegación)
-Sugerencia de árbol de navegación (React Navigation, Stack + Drawer):
-```
-Drawer (contenido: <SideMenu />)
-  Stack "Home" → DashboardScreen
-  Stack "Chat" → ChatScreen, NewChatScreen, ChatHistoryScreen
-  Stack "Profile" → ProfileScreen
-  Stack "Spotify" → SpotifyConnectScreen, SpotifyPlaylistsScreen, SpotifyFavoritesScreen
-  Stack "Location" → SafePlacesScreen, NearbyHelpScreen, CrisisShareScreen
-  Stack "Contacts" → EmergencyContactsScreen, EditContactScreen
-Stack raíz (sin drawer) → RegisterScreen, LoginScreen, OtpVerificationScreen
-```
-Las screens con `EditContact` esperan `route.params.contactId` opcional (si viene,
-es modo edición y se muestra el botón "Eliminar").
+Enter the project directory:
+cd LetDown-Frontend
 
-## Notas importantes
-- **Iconos/imágenes**: Figma expone los assets como URLs temporales
-  (expiran a los 7 días). Sustituye los íconos `Feather` por los SVG
-  reales cuando los exportes desde Figma, y reemplaza
-  `src/assets/images/sanctuary-logo.png` por el logo real.
-- **Navegación**: cada pantalla asume que recibe `navigation` (y
-  `route` cuando aplica) vía props — estándar de React Navigation.
-- **Instalación**: `npm install`, luego `npx pod-install` en iOS.
+Install dependencies:
+npm install
+
+Android
+npm run android
+
+iOS
+Install CocoaPods dependencies:
+cd ios
+pod install
+cd ..
+
+Then run:
+npm run ios
+
+🔐 Environment Variables
+Create a .env file in the root directory if required:
+API_URL=your_api_url
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+
+Never commit API keys, tokens, passwords, or other credentials to the repository.
+
+🧩 Architecture
+The application follows a component-based architecture using reusable React Native components.
+The project separates:
+- Screens
+- Reusable UI components
+- Navigation
+- Authentication flows
+- External service integrations
+- Application state
+This approach improves maintainability, scalability, and code reuse.
+
+🗺️ Roadmap
+- [x] Authentication UI
+- [x] Login validation
+- [x] Registration
+- [x] Dashboard
+- [x] Chat interface
+- [x] Profile
+- [x] Spotify screens
+- [x] Backend integration
+- [x] Complete Spotify API integration
+- [x] Biometric authentication
+- [x] Push notifications
+- [x] Automated testing
+- [x] Production release
+👨‍💻 Author
+David Casanova
+Frontend / Mobile Developer
+Technologies: React, React Native, TypeScript and JavaScript.
