@@ -51,28 +51,33 @@ Login
 
 <img width="270" height="640" alt="login" src="https://github.com/user-attachments/assets/d128db93-5adb-4a36-a140-32e476ba8db2" />
 
-Restablecer contraseña
+Reset password
 
 <img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 50 PM" src="https://github.com/user-attachments/assets/84c66f47-96e1-4253-adde-39be822b529f" />
 
-Chat con AI
+Chat with AI
 
 <img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(2)" src="https://github.com/user-attachments/assets/224ba171-5ac7-49ab-9d24-4d417e72df29" />
 <img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(3)" src="https://github.com/user-attachments/assets/7366a136-0cdf-44e7-9ca5-57f3afa0bbf8" />
 
-Historial de chats
+Chat history
+
 <img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(4)" src="https://github.com/user-attachments/assets/0388a361-62e5-4a95-ba87-d80c79caf57b" />
 
-Perfil y escaneo de datos de INE
+INE profile and data scan
+
 <img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(5)" src="https://github.com/user-attachments/assets/cfa271ad-0f5f-4741-9481-f82d9ce89132" />
 
-Musica emotiva - Integracion con Spotify
+Emotional music - Integration with Spotify
+
 <img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(6)" src="https://github.com/user-attachments/assets/9c6f5b84-b5b9-44b2-9ff2-9fd1a17bbb45" />
 
-Localizacion segura
+Secure location
+
 <img width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(7)" src="https://github.com/user-attachments/assets/baa6dafb-6c52-455a-bd3d-2fa95af1ec27" />
 
 Contacts
+
 <img  width="270" height="640" alt="WhatsApp Image 2026-10-06 at 7 55 51 PM(7)" src="https://github.com/user-attachments/assets/f163bdf3-9c65-4751-9e85-a861e23058b4" />
 
 
@@ -172,6 +177,9 @@ This approach improves maintainability, scalability, and code reuse.
 - [x] Push notifications
 - [x] Automated testing
 - [x] Production release
+
+Link demo: https://drive.google.com/file/d/1hbn2Ug9wIje4pYl4loLj0xF1m4-ne5mR/view?usp=sharing
+
 👨‍💻 Author
 David Casanova
 Frontend / Mobile Developer
