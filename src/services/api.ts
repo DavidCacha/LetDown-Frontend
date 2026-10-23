@@ -1,18 +1,5 @@
 import { Platform } from 'react-native';
 
-/**
- * Backend local (NestJS) — puerto 3000, prefijo global /api/v1.
- *
- * IMPORTANTE sobre BASE_URL en desarrollo local:
- * - Emulador Android: "localhost" apunta al propio emulador, no a tu PC.
- *   Por eso se usa 10.0.2.2, que Android mapea automáticamente a
- *   localhost de tu máquina.
- * - Simulador iOS: sí puede usar "localhost" directo.
- * - Celular físico (USB o wifi): ninguno de los dos funciona. Reemplaza
- *   manualmente LOCAL_HOST por la IP de tu PC en la red local, ej:
- *   const LOCAL_HOST = '192.168.1.45';
- *   (Windows: ejecuta `ipconfig` y busca "Dirección IPv4")
- */
 const LOCAL_HOST = '192.168.100.5';
 
 export const BASE_URL = `https://id-7f4a23b6e3e7431e8515e6735ad09287.ecs.us-east-2.on.aws/api/v1`;
@@ -34,20 +21,6 @@ interface RequestOptions {
   accessToken?: string;
 }
 
-/**
- * Wrapper de red que:
- * - Manda/parsea JSON automáticamente
- * - Agrega el header Authorization cuando se pasa accessToken
- * - Normaliza los errores de NestJS (class-validator) a un ApiError legible
- *
- * NOTA: usa XMLHttpRequest en vez de fetch(). En este proyecto (RN 0.74.0
- * + Android físico) fetch() falla de forma intermitente/consistente con
- * "TypeError: Network request failed" en peticiones POST con body JSON +
- * header Authorization sobre la IP LAN, mientras que la misma petición vía
- * XMLHttpRequest funciona siempre (confirmado con curl/Swagger en 201 y
- * con una prueba XHR directa). GET seguía funcionando bien con fetch, pero
- * se deja todo unificado en XHR para evitar sorpresas futuras.
- */
 export function apiFetch<T = any>(
   path: string,
   options: RequestOptions = {},
